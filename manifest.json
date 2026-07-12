@@ -1,6 +1,6 @@
 {
-  "name": "Conteo de Inventario Alcy",
-  "short_name": "Conteo Alcy",
+  "name": "Inventario Alcy",
+  "short_name": "Inventario Alcy",
   "description": "Conteo físico de stock de Plásticos Alcy (Puesto y Almacén), funciona sin internet.",
   "lang": "es",
   "start_url": "./index.html",
