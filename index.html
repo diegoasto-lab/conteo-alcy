@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0d6efd">
+  <title>Conteo Alcy</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon-192.png">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <h1>📦 Conteo Alcy</h1>
+    <div class="topbar-right">
+      <span id="estado-red" class="pill pill-red" title="Estado de conexión">●</span>
+      <button id="btn-ajustes" class="btn-icono" aria-label="Ajustes">⚙️</button>
+    </div>
+  </header>
+
+  <main id="vista-principal">
+
+    <!-- 1. Selector de ubicación -->
+    <section class="card">
+      <h2>1. ¿Dónde estás contando?</h2>
+      <div class="selector-ubicacion">
+        <button id="ub-puesto" class="btn-ubicacion" data-ubicacion="PUESTO">
+          🏪<span>Puesto de venta</span>
+        </button>
+        <button id="ub-almacen" class="btn-ubicacion" data-ubicacion="ALMACEN">
+          🏭<span>Almacén</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- 2. Buscador de producto -->
+    <section class="card">
+      <h2>2. Busca el producto</h2>
+      <input id="buscador" type="search" placeholder="Código o nombre (ej. vaso, VAA03, 8x12...)"
+             autocomplete="off" autocapitalize="off">
+      <ul id="lista-productos" class="lista-productos"></ul>
+    </section>
+
+    <!-- 3. Formulario de conteo (aparece al elegir producto) -->
+    <section id="panel-conteo" class="card oculto">
+      <h2>3. Cantidad contada</h2>
+      <div id="producto-elegido" class="producto-elegido"></div>
+      <input id="cantidad" type="number" inputmode="decimal" min="0" step="any"
+             placeholder="Cantidad contada">
+      <p class="nota">Este número <strong>reemplaza</strong> el stock de la ubicación elegida
+        (es el conteo físico total, no una entrada/salida).</p>
+      <div class="fila-botones">
+        <button id="btn-cancelar" class="btn btn-gris">Cancelar</button>
+        <button id="btn-guardar" class="btn btn-azul">💾 Guardar conteo</button>
+      </div>
+    </section>
+
+    <!-- Pendientes -->
+    <section class="card">
+      <div class="fila-titulo">
+        <h2>Conteos guardados (sin sincronizar)</h2>
+        <span id="badge-pendientes" class="badge">0</span>
+      </div>
+      <ul id="lista-pendientes" class="lista-pendientes"></ul>
+      <button id="btn-sync" class="btn btn-verde btn-grande">🔄 Sincronizar ahora</button>
+      <p id="msg-sync" class="msg"></p>
+    </section>
+  </main>
+
+  <!-- Ajustes -->
+  <main id="vista-ajustes" class="oculto">
+    <section class="card">
+      <h2>⚙️ Ajustes</h2>
+      <label for="cfg-url">URL del relay (Google Apps Script)</label>
+      <input id="cfg-url" type="url" placeholder="https://script.google.com/macros/s/.../exec">
+      <label for="cfg-token">Token secreto</label>
+      <input id="cfg-token" type="text" placeholder="el mismo token del Apps Script"
+             autocomplete="off" autocapitalize="off">
+      <div class="fila-botones">
+        <button id="btn-ajustes-volver" class="btn btn-gris">Volver</button>
+        <button id="btn-ajustes-guardar" class="btn btn-azul">Guardar ajustes</button>
+      </div>
+      <p id="msg-ajustes" class="msg"></p>
+      <hr>
+      <p class="nota">Pega aquí la URL que te da Google al implementar el Apps Script
+        (termina en <code>/exec</code>) y el mismo token que configuraste allá.
+        Ver <strong>SETUP.md</strong>.</p>
+    </section>
+  </main>
+
+  <div id="toast" class="toast oculto"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
