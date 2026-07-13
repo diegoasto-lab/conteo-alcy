@@ -13,14 +13,35 @@
 <body>
 
   <header class="topbar">
-    <h1>📦 Inventario Alcy</h1>
+    <h1 id="titulo-topbar">📦 Inventario Alcy</h1>
     <div class="topbar-right">
       <span id="estado-red" class="pill pill-red" title="Estado de conexión">●</span>
       <button id="btn-ajustes" class="btn-icono" aria-label="Ajustes">⚙️</button>
     </div>
   </header>
 
-  <main id="vista-principal">
+  <!-- ===== MENÚ PRINCIPAL ===== -->
+  <main id="vista-menu">
+    <section class="card">
+      <h2>¿Qué quieres hacer?</h2>
+      <div class="menu-principal">
+        <button id="menu-contar" class="btn-menu">
+          <span class="bm-icono">📋</span>
+          <span class="bm-titulo">Contar stock</span>
+          <span class="bm-detalle">Conteo físico por ubicación (funciona sin internet)</span>
+        </button>
+        <button id="menu-dashboard" class="btn-menu">
+          <span class="bm-icono">📊</span>
+          <span class="bm-titulo">Dashboard</span>
+          <span class="bm-detalle">Semáforo de stock vs. punto de reorden, por categoría</span>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== CONTAR STOCK (flujo original) ===== -->
+  <main id="vista-conteo" class="oculto">
+    <button class="btn-volver" data-volver>← Menú</button>
 
     <!-- 1. Selector de ubicación -->
     <section class="card">
@@ -38,8 +59,18 @@
     <!-- 2. Buscador de producto -->
     <section class="card">
       <h2>2. Busca el producto</h2>
-      <input id="buscador" type="search" placeholder="Código o nombre (ej. vaso, VAA03, 8x12...)"
-             autocomplete="off" autocapitalize="off">
+      <div class="fila-buscador">
+        <input id="buscador" type="search" placeholder="Código o nombre (ej. vaso, VAA03, 8x12...)"
+               autocomplete="off" autocapitalize="off">
+        <button id="btn-voz" class="btn-voz" aria-label="Buscar por voz" title="Buscar por voz">🎙️</button>
+      </div>
+      <p id="msg-voz" class="msg"></p>
+      <div id="chips-categoria" class="chips" role="group" aria-label="Filtrar por categoría">
+        <button class="chip activa" data-cat="">Todas</button>
+        <button class="chip" data-cat="Descartables">🥤 Descartables</button>
+        <button class="chip" data-cat="Bolsas">🛍️ Bolsas</button>
+        <button class="chip" data-cat="Rollos">🧻 Rollos</button>
+      </div>
       <ul id="lista-productos" class="lista-productos"></ul>
     </section>
 
@@ -69,7 +100,14 @@
     </section>
   </main>
 
-  <!-- Ajustes -->
+  <!-- ===== DASHBOARD ===== -->
+  <main id="vista-dashboard" class="oculto">
+    <button class="btn-volver" data-volver>← Menú</button>
+    <div id="dashboard-contenido"></div>
+    <p id="dashboard-pie" class="nota centrado"></p>
+  </main>
+
+  <!-- ===== AJUSTES ===== -->
   <main id="vista-ajustes" class="oculto">
     <section class="card">
       <h2>⚙️ Ajustes</h2>
