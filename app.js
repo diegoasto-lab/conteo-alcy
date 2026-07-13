@@ -74,6 +74,46 @@ function normalizar(s) {
   return (s || "").toString().toLowerCase()
     .normalize("NFD").replace(/[̀-ͯ]/g, "");
 }
+// Normalización FONÉTICA del español: junta letras que suenan igual (o casi
+// igual) para que la búsqueda por voz no falle cuando Google transcribe
+// "bazo" en vez de "vaso" (b/v se pronuncian igual), "sapato" en vez de
+// "zapato" (seseo: z/s/c suave suenan igual), o "yamada" en vez de "llamada"
+// (yeísmo: ll/y suenan igual). Es solo sustitución de letras, sin IA ni red.
+function normalizarFonetico(s) {
+  return s
+    .replace(/[bv]/g, "b")
+    .replace(/c(?=[ei])/g, "s")
+    .replace(/z/g, "s")
+    .replace(/ll/g, "y");
+}
+// Distancia de edición (Levenshtein) con corte temprano en "max" para que
+// sea rápida: si ya nos pasamos de "max" diferencias, deja de calcular.
+// Sirve de red de seguridad para deslices de la transcripción de voz que la
+// normalización fonética no cubre (una letra de más/menos, confusión d/t, etc.).
+function distanciaEdicion(a, b, max) {
+  const la = a.length, lb = b.length;
+  if (Math.abs(la - lb) > max) return max + 1;
+  let prev = new Array(lb + 1);
+  for (let j = 0; j <= lb; j++) prev[j] = j;
+  for (let i = 1; i <= la; i++) {
+    const cur = [i];
+    let filaMin = cur[0];
+    for (let j = 1; j <= lb; j++) {
+      const costo = a[i - 1] === b[j - 1] ? 0 : 1;
+      const v = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + costo);
+      cur.push(v);
+      if (v < filaMin) filaMin = v;
+    }
+    if (filaMin > max) return max + 1;
+    prev = cur;
+  }
+  return prev[lb];
+}
+function toleranciaPorLargo(len) {
+  if (len <= 3) return 0;   // palabras muy cortas: sin tolerancia (evita falsos positivos)
+  if (len <= 6) return 1;
+  return 2;
+}
 function nombreUbicacion(u) {
   return u === "PUESTO" ? "Puesto de venta" : "Almacén";
 }
@@ -132,7 +172,22 @@ function coincide(p, tokens) {
   const pajar = normalizar(
     [p.codigo, p.producto, p.tipo, p.fabricante, p.categoria, p.unidad].join(" ")
   );
-  return tokens.every((t) => tokenARegex(t).test(pajar));
+  // versión fonética del pajar, para tolerar b/v, s/z/c, ll/y (típico de
+  // transcripciones de voz en español, ej. "bazo" cuando dijiste "vaso")
+  const pajarFon = normalizarFonetico(pajar);
+  const palabrasFon = pajarFon.split(/\s+/).filter(Boolean);
+  return tokens.every((t) => {
+    if (/^\d/.test(t)) {
+      // tokens numéricos: SIN cambios, exactos (5oz no debe matchear 5.5oz)
+      return tokenARegex(t).test(pajar);
+    }
+    const tFon = normalizarFonetico(t);
+    if (pajarFon.includes(tFon)) return true;           // match fonético directo
+    const tol = toleranciaPorLargo(tFon.length);
+    if (tol === 0) return false;
+    // red de seguridad: 1-2 letras de diferencia contra alguna palabra del producto
+    return palabrasFon.some((w) => distanciaEdicion(tFon, w, tol) <= tol);
+  });
 }
 function pintarLista() {
   const q = normalizar($("buscador").value.trim());
