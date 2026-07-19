@@ -127,7 +127,7 @@ function nuevoId() {
 }
 
 // ---------- Navegación entre vistas ----------
-const VISTAS = ["vista-menu", "vista-conteo", "vista-dashboard", "vista-ajustes"];
+const VISTAS = ["vista-menu", "vista-conteo", "vista-dashboard", "vista-vender", "vista-ajustes"];
 let vistaActual = "vista-menu";
 let vistaPrevia = "vista-menu"; // para volver desde Ajustes
 
@@ -140,6 +140,7 @@ function mostrarVista(id) {
 }
 $("menu-contar").addEventListener("click", () => mostrarVista("vista-conteo"));
 $("menu-dashboard").addEventListener("click", () => mostrarVista("vista-dashboard"));
+$("menu-vender").addEventListener("click", () => mostrarVista("vista-vender"));
 document.querySelectorAll("[data-volver]").forEach((b) =>
   b.addEventListener("click", () => mostrarVista("vista-menu")));
 
@@ -501,6 +502,122 @@ function pintarDashboard() {
     : "";
 }
 
+// ---------- Vender (precio y ganancia — solo lectura, Fase 3) ----------
+// Mismo patrón que el selector de ubicación (Puesto/Almacén), pero para
+// "tipo de cliente". Los precios se editan en el Excel; aquí solo se ven.
+const NOMBRE_TIPO_CLIENTE = { MAYORISTA: "Mayorista", MINORISTA: "Minorista", VECINO: "Vecino" };
+const CAMPO_PRECIO_POR_TIPO = { MAYORISTA: "pv_mayorista", MINORISTA: "pv_minorista", VECINO: "pv_vecino" };
+let tipoCliente = localStorage.getItem("tipoCliente") || null;
+let productoVendiendo = null;
+
+function pintarTipoCliente() {
+  document.querySelectorAll(".btn-tipocliente").forEach((b) => {
+    b.classList.toggle("activa", b.dataset.tipo === tipoCliente);
+  });
+}
+document.querySelectorAll(".btn-tipocliente").forEach((b) => {
+  b.addEventListener("click", () => {
+    tipoCliente = b.dataset.tipo;
+    localStorage.setItem("tipoCliente", tipoCliente);
+    pintarTipoCliente();
+    if (productoVendiendo) pintarTarjetaVender();
+  });
+});
+
+function moneda(v) { return "S/ " + v.toFixed(2); }
+
+function pintarListaVender() {
+  const q = normalizar($("buscador-vender").value.trim());
+  const tokens = q ? q.split(/\s+/) : [];
+  const ul = $("lista-productos-vender");
+  ul.innerHTML = "";
+  let items = catalogo;
+  if (tokens.length) items = items.filter((p) => coincide(p, tokens));
+  if (!items.length) {
+    ul.innerHTML = '<li class="lista-vacia">Sin resultados. Prueba con otra palabra.</li>';
+    return;
+  }
+  for (const p of items.slice(0, 60)) {
+    const li = document.createElement("li");
+    li.innerHTML =
+      `<div><div class="lp-nombre"></div><div class="lp-detalle"></div></div>` +
+      `<span class="lp-codigo"></span>`;
+    li.querySelector(".lp-nombre").textContent = p.producto;
+    li.querySelector(".lp-detalle").textContent =
+      [p.categoria || p.tipo, p.unidad, p.fabricante].filter(Boolean).join(" · ");
+    li.querySelector(".lp-codigo").textContent = p.codigo;
+    li.addEventListener("click", () => elegirProductoVender(p));
+    ul.appendChild(li);
+  }
+}
+$("buscador-vender").addEventListener("input", pintarListaVender);
+
+function elegirProductoVender(p) {
+  if (!tipoCliente) {
+    toast("Primero elige a quién le vendes (Mayorista, Minorista o Vecino)");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    return;
+  }
+  productoVendiendo = p;
+  $("tarjeta-vender").classList.remove("oculto");
+  pintarTarjetaVender();
+  $("tarjeta-vender").scrollIntoView({ behavior: "smooth" });
+}
+
+function pintarTarjetaVender() {
+  const p = productoVendiendo;
+  const cont = $("vender-contenido");
+  const costo = typeof p.costo_unitario === "number" ? p.costo_unitario : null;
+  const campoPrecio = CAMPO_PRECIO_POR_TIPO[tipoCliente];
+  const precio = typeof p[campoPrecio] === "number" ? p[campoPrecio] : null;
+
+  if (costo === null || precio === null) {
+    cont.innerHTML =
+      `<div class="producto-elegido"><b></b><span></span></div>
+       <p class="nota">⚠️ A este producto le falta costo o precio ${NOMBRE_TIPO_CLIENTE[tipoCliente].toLowerCase()}
+       registrado. Complétalo en el Excel (columnas COSTO_UNITARIO / ${campoPrecio.toUpperCase()}).</p>`;
+    cont.querySelector("b").textContent = p.producto;
+    cont.querySelector("span").textContent = `Código ${p.codigo}`;
+    return;
+  }
+
+  const margen = precio > 0 ? (precio - costo) / precio : 0;
+  const ganancia = precio - costo;
+
+  cont.innerHTML =
+    `<div class="producto-elegido"><b></b><span></span></div>
+     <div class="vender-fila"><span>Costo</span><b></b></div>
+     <div class="vender-fila"><span>Precio ${NOMBRE_TIPO_CLIENTE[tipoCliente]}</span><b></b></div>
+     <div class="vender-fila"><span>Ganancia por unidad</span><b></b></div>
+     <div class="vender-fila"><span>Margen</span><b></b></div>
+     <label for="vender-cantidad">¿Cuántas unidades vas a vender?</label>
+     <input id="vender-cantidad" type="number" inputmode="decimal" min="0" step="any"
+            placeholder="Cantidad (opcional)">
+     <div class="vender-fila vender-total oculto" id="vender-fila-total">
+       <span>Ganancia total estimada</span><b id="vender-total-valor"></b>
+     </div>`;
+  cont.querySelector("b").textContent = p.producto;
+  cont.querySelector("span").textContent =
+    `Código ${p.codigo}` + (p.unidad ? ` · Unidad: ${p.unidad}` : "");
+  const filas = cont.querySelectorAll(".vender-fila b");
+  filas[0].textContent = moneda(costo);
+  filas[1].textContent = moneda(precio);
+  filas[2].textContent = moneda(ganancia);
+  filas[2].className = ganancia >= 0 ? "positivo" : "negativo";
+  filas[3].textContent = (margen * 100).toFixed(1) + "%";
+
+  $("vender-cantidad").addEventListener("input", (ev) => {
+    const n = Number(ev.target.value);
+    const filaTotal = $("vender-fila-total");
+    if (ev.target.value.trim() === "" || !isFinite(n) || n < 0) {
+      filaTotal.classList.add("oculto");
+      return;
+    }
+    $("vender-total-valor").textContent = moneda(ganancia * n);
+    filaTotal.classList.remove("oculto");
+  });
+}
+
 // ---------- Sincronización ----------
 async function sincronizar() {
   const msg = $("msg-sync");
@@ -599,6 +716,7 @@ window.addEventListener("offline", pintarRed);
 async function iniciar() {
   pintarRed();
   pintarUbicacion();
+  pintarTipoCliente();
   await abrirDB();
   try {
     const r = await fetch("catalogo.json");
@@ -615,9 +733,10 @@ async function iniciar() {
     catalogo = [];
   }
   pintarLista();
-  // deep-links: index.html#dashboard o #contar abren esa vista directo
+  // deep-links: index.html#dashboard, #contar o #vender abren esa vista directo
   if (location.hash === "#dashboard") mostrarVista("vista-dashboard");
   else if (location.hash === "#contar") mostrarVista("vista-conteo");
+  else if (location.hash === "#vender") mostrarVista("vista-vender");
   else if (vistaActual === "vista-dashboard") pintarDashboard();
   await pintarPendientes();
   if ("serviceWorker" in navigator) {

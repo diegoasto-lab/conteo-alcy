@@ -35,6 +35,11 @@
           <span class="bm-titulo">Dashboard</span>
           <span class="bm-detalle">Semáforo de stock vs. punto de reorden, por categoría</span>
         </button>
+        <button id="menu-vender" class="btn-menu">
+          <span class="bm-icono">💵</span>
+          <span class="bm-titulo">Vender</span>
+          <span class="bm-detalle">Precio y ganancia por producto, según tipo de cliente</span>
+        </button>
       </div>
     </section>
   </main>
@@ -105,6 +110,40 @@
     <button class="btn-volver" data-volver>← Menú</button>
     <div id="dashboard-contenido"></div>
     <p id="dashboard-pie" class="nota centrado"></p>
+  </main>
+
+  <!-- ===== VENDER (precio y ganancia) ===== -->
+  <main id="vista-vender" class="oculto">
+    <button class="btn-volver" data-volver>← Menú</button>
+
+    <!-- 1. Selector de tipo de cliente -->
+    <section class="card">
+      <h2>1. ¿A quién le vendes?</h2>
+      <div class="selector-ubicacion selector-3">
+        <button id="tc-mayorista" class="btn-ubicacion btn-tipocliente" data-tipo="MAYORISTA">
+          🏢<span>Mayorista</span>
+        </button>
+        <button id="tc-minorista" class="btn-ubicacion btn-tipocliente" data-tipo="MINORISTA">
+          🏠<span>Minorista</span>
+        </button>
+        <button id="tc-vecino" class="btn-ubicacion btn-tipocliente" data-tipo="VECINO">
+          🤝<span>Vecino</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- 2. Buscador de producto -->
+    <section class="card">
+      <h2>2. Busca el producto</h2>
+      <input id="buscador-vender" type="search" placeholder="Código o nombre (ej. vaso, VAA03, 8x12...)"
+             autocomplete="off" autocapitalize="off">
+      <ul id="lista-productos-vender" class="lista-productos"></ul>
+    </section>
+
+    <!-- 3. Tarjeta de precio y ganancia (aparece al elegir producto) -->
+    <section id="tarjeta-vender" class="card oculto">
+      <div id="vender-contenido"></div>
+    </section>
   </main>
 
   <!-- ===== AJUSTES ===== -->

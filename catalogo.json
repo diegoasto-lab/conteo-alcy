@@ -1,5 +1,5 @@
 {
- "generado": "2026-07-12T22:15:27",
+ "generado": "2026-07-19T18:49:51",
  "productos": [
   {
    "codigo": "VAA03",
@@ -14,7 +14,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "VAM05",
@@ -29,7 +33,11 @@
    "stock_seguridad": 3.0,
    "punto_reorden": 4.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "VAP55",
@@ -44,7 +52,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "VAM55",
@@ -59,7 +71,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "VAK55",
@@ -74,7 +90,11 @@
    "stock_seguridad": 5.0,
    "punto_reorden": 7.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "VAM65",
@@ -89,7 +109,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "VAP65",
@@ -104,7 +128,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "VAM07",
@@ -119,7 +147,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "VAK9T",
@@ -134,7 +166,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "VAK9B",
@@ -149,7 +185,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "CUK54",
@@ -164,7 +204,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "CUK55",
@@ -179,7 +223,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "TEK54",
@@ -194,7 +242,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "TEK55",
@@ -209,7 +261,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "CUK62",
@@ -224,7 +280,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "TEK62",
@@ -239,7 +299,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "P15KB",
@@ -254,7 +318,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "P15VB",
@@ -269,7 +337,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "PB1BT",
@@ -284,7 +356,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "PB2BT",
@@ -299,7 +375,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "PB2BB",
@@ -314,7 +394,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "PB2PB",
@@ -329,7 +413,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "EN12L",
@@ -344,7 +432,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "EN01L",
@@ -359,7 +451,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "1",
@@ -374,7 +470,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "2",
@@ -389,7 +489,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "3",
@@ -404,7 +508,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "4",
@@ -419,7 +527,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "5",
@@ -434,7 +546,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "6",
@@ -449,7 +565,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "7",
@@ -464,7 +584,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "8",
@@ -479,7 +603,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "9",
@@ -494,7 +622,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "10",
@@ -509,7 +641,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "12",
@@ -524,7 +660,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "13",
@@ -539,7 +679,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "15",
@@ -554,7 +698,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "17",
@@ -569,7 +717,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "18",
@@ -584,7 +736,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "1",
@@ -599,7 +755,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "2",
@@ -614,7 +774,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "12X16",
@@ -629,7 +793,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "4",
@@ -644,7 +812,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "5",
@@ -659,7 +831,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "6",
@@ -674,7 +850,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "7",
@@ -689,7 +869,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "8",
@@ -704,7 +888,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "9",
@@ -719,7 +907,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "10",
@@ -734,7 +926,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "12",
@@ -749,7 +945,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "13",
@@ -764,7 +964,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "15",
@@ -779,7 +983,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "16",
@@ -794,7 +1002,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "17",
@@ -809,7 +1021,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "18",
@@ -824,7 +1040,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "2",
@@ -839,7 +1059,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "3",
@@ -854,7 +1078,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "59",
@@ -869,7 +1097,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "5",
@@ -884,7 +1116,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "6",
@@ -899,7 +1135,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "7",
@@ -914,7 +1154,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "8",
@@ -929,7 +1173,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "1",
@@ -944,7 +1192,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "2",
@@ -959,7 +1211,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "3",
@@ -974,7 +1230,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "SOP0P",
@@ -989,7 +1249,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   },
   {
    "codigo": "SAL14",
@@ -1004,7 +1268,11 @@
    "stock_seguridad": 0.0,
    "punto_reorden": 0.0,
    "lead_time_dias": 7.0,
-   "nivel_servicio": 0.95
+   "nivel_servicio": 0.95,
+   "costo_unitario": null,
+   "pv_mayorista": null,
+   "pv_minorista": null,
+   "pv_vecino": null
   }
  ]
 }
