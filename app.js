@@ -713,11 +713,7 @@ window.addEventListener("online", pintarRed);
 window.addEventListener("offline", pintarRed);
 
 // ---------- Arranque ----------
-async function iniciar() {
-  pintarRed();
-  pintarUbicacion();
-  pintarTipoCliente();
-  await abrirDB();
+async function cargarCatalogo() {
   try {
     const r = await fetch("catalogo.json");
     const data = await r.json();
@@ -728,10 +724,20 @@ async function iniciar() {
       catalogo = data.productos || [];
       catalogoGenerado = data.generado || null;
     }
+    return true;
   } catch (e) {
     toast("No se pudo cargar el catálogo de productos", 4000);
     catalogo = [];
+    return false;
   }
+}
+
+async function iniciar() {
+  pintarRed();
+  pintarUbicacion();
+  pintarTipoCliente();
+  await abrirDB();
+  await cargarCatalogo();
   pintarLista();
   // deep-links: index.html#dashboard, #contar o #vender abren esa vista directo
   if (location.hash === "#dashboard") mostrarVista("vista-dashboard");
@@ -744,3 +750,15 @@ async function iniciar() {
   }
 }
 iniciar();
+
+// Android suele "congelar" la app en vez de cerrarla: al volver a primer
+// plano no siempre recarga la página. Forzamos traer catalogo.json fresco
+// cada vez que la app vuelve a ser visible (pestaña/app en foreground).
+document.addEventListener("visibilitychange", async () => {
+  if (document.visibilityState !== "visible") return;
+  const ok = await cargarCatalogo();
+  if (!ok) return;
+  pintarLista();
+  if (vistaActual === "vista-dashboard") pintarDashboard();
+  else if (vistaActual === "vista-vender" && typeof pintarListaVender === "function") pintarListaVender();
+});

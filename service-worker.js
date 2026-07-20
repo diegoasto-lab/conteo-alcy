@@ -5,7 +5,7 @@
      muestra stock fresco apenas se republica, y offline sigue usando el
      último catálogo descargado.
    Si cambias cualquier archivo de la app, sube el numero de VERSION. */
-const VERSION = "conteo-alcy-v5";
+const VERSION = "conteo-alcy-v6";
 const ASSETS = [
   "./",
   "./index.html",
