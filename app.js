@@ -773,3 +773,8 @@ async function refrescarSiVisible() {
 document.addEventListener("visibilitychange", refrescarSiVisible);
 window.addEventListener("pageshow", refrescarSiVisible);
 window.addEventListener("focus", refrescarSiVisible);
+// Respaldo adicional: en algunas WebAPK de Android ninguno de esos eventos
+// se dispara al volver de segundo plano (la app queda "congelada" y se
+// restaura tal cual). Un refresco periódico asegura que el dato nunca
+// quede desactualizado más de 1 minuto mientras la app siga abierta.
+setInterval(refrescarSiVisible, 60000);
