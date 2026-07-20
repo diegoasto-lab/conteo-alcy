@@ -1,5 +1,5 @@
 {
- "generado": "2026-07-20T13:01:28",
+ "generado": "2026-07-20T13:12:44",
  "productos": [
   {
    "codigo": "P001",
@@ -10,7 +10,7 @@
    "fabricante": "Alfa",
    "stock_puesto": null,
    "stock_almacen": null,
-   "stock_total": 1.0,
+   "stock_total": 7.0,
    "stock_seguridad": null,
    "punto_reorden": null,
    "lead_time_dias": null,
