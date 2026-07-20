@@ -752,13 +752,24 @@ async function iniciar() {
 iniciar();
 
 // Android suele "congelar" la app en vez de cerrarla: al volver a primer
-// plano no siempre recarga la página. Forzamos traer catalogo.json fresco
-// cada vez que la app vuelve a ser visible (pestaña/app en foreground).
-document.addEventListener("visibilitychange", async () => {
-  if (document.visibilityState !== "visible") return;
-  const ok = await cargarCatalogo();
-  if (!ok) return;
-  pintarLista();
-  if (vistaActual === "vista-dashboard") pintarDashboard();
-  else if (vistaActual === "vista-vender" && typeof pintarListaVender === "function") pintarListaVender();
-});
+// plano no siempre recarga la página ni dispara visibilitychange de forma
+// confiable en WebAPKs. Por eso escuchamos varios eventos de "volví a
+// primer plano" (visibilitychange, pageshow, focus) con guarda para no
+// disparar el fetch varias veces si llegan juntos.
+let refrescandoCatalogo = false;
+async function refrescarSiVisible() {
+  if (refrescandoCatalogo || document.visibilityState !== "visible") return;
+  refrescandoCatalogo = true;
+  try {
+    const ok = await cargarCatalogo();
+    if (!ok) return;
+    pintarLista();
+    if (vistaActual === "vista-dashboard") pintarDashboard();
+    else if (vistaActual === "vista-vender") pintarListaVender();
+  } finally {
+    refrescandoCatalogo = false;
+  }
+}
+document.addEventListener("visibilitychange", refrescarSiVisible);
+window.addEventListener("pageshow", refrescarSiVisible);
+window.addEventListener("focus", refrescarSiVisible);
